@@ -1,3 +1,4 @@
 rootProject.name = 'JavaTools'
 include 'lineSeparator'
+include 'characterCounter'
 

@@ -50,7 +50,7 @@ subprojects {
         compile 'ch.qos.logback:logback-core:1.2.3'
 
         // 適宜入れるやつ
-      compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
-      compile group: 'commons-io', name: 'commons-io', version: '2.6'
+        compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+        compile group: 'commons-io', name: 'commons-io', version: '2.6'
     }
 }
