@@ -6,6 +6,7 @@ import java.text.MessageFormat;
 import java.util.stream.Stream;
 
 public enum Options {
+    DEBUG("-d"),
     HELP("-h"),
     ENCODING("-e"),
     LINE_SEPARATOR("-s"),
@@ -26,7 +27,7 @@ public enum Options {
         ).findFirst().orElseThrow(
                 () -> new IllegalArgumentException(
                         MessageFormat.format(
-                                "無効なオプションが指定されています。（指定オプション：[{}]）"
+                                "無効なオプションが指定されています。（指定オプション：[{0}]）"
                                 , str
                         )
                 )

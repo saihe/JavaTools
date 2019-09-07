@@ -12,8 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-public class Executor {
-    public int execute(Options options){
+class Executor {
+    int execute(Options options){
+        log.info("処理開始");
         try {
             log.info(
                     "ファイル読込オプション（文字コード：[{}]、改行コード：[{}]、改行文字数：[{}]、読込ファイルパス：[{}]）"
@@ -31,7 +32,7 @@ public class Executor {
 //            log.debug(string);
             List<String> separated = new ArrayList<>();
             for (int point = 0; point < string.length(); point += options.getLineLength()) {
-                log.info("全体文字数：[{}]、現在のポインター：[{}]", string.length(), point);
+//                log.debug("全体文字数：[{}]、現在のポインター：[{}]", string.length(), point);
                 int endIndex = options.getLineLength() > string.length() ? string.length() : point + options.getLineLength();
                 separated.add(string.substring(point, endIndex));
             }
@@ -43,12 +44,13 @@ public class Executor {
                     outputFilePath.toFile()
                     , options.getEncode()
                     , separated
-                    , LineSeparator.getCharacter(options.getLineSeparator()).getCharacter()
+                    , options.getLineSeparator()
             );
         } catch (IOException e) {
             log.error("ファイル読込・書込に失敗しました。（ファイルパス：[{}]）", options.getFilePath(), e);
             return 9;
         }
+        log.info("処理終了");
         return 0;
     }
 }

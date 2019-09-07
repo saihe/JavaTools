@@ -1,10 +1,10 @@
 package properties;
 
+import enums.LineSeparator;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -25,7 +25,7 @@ public class Options {
 
     public Options() throws IOException {
         Properties properties = new Properties();
-        Path propPath = Paths.get("./", "application.properties");
+        Path propPath = Paths.get("./", "user.properties");
         if (Files.exists(propPath)) {
             properties.load(
                     Files.newInputStream(
@@ -40,13 +40,7 @@ public class Options {
         } else {
             try {
                 log.info("jarと同じディレクトリ内にプロパティファイルが存在しないため、jarに含まれるプロパティファイルを使用。");
-                propPath = Paths.get("application.properties");
-                properties.load(
-                        Files.newInputStream(
-                                propPath
-                                , StandardOpenOption.READ
-                        )
-                );
+                properties.load(this.getClass().getResourceAsStream("/application.properties"));
                 this.encode = properties.getProperty("options.encode", "");
                 this.lineSeparator = properties.getProperty("options.line.separator", "");
                 this.lineLength = Integer.getInteger(properties.getProperty("options.line.length", "0"));
@@ -59,5 +53,9 @@ public class Options {
                 this.filePath = "C:/work/test/files/merchant_fee_return_0010_20190831";
             }
         }
+    }
+
+    public void setLineSeparator(String lineSeparator) {
+        this.lineSeparator = LineSeparator.getCharactorByName(lineSeparator);
     }
 }
