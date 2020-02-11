@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":renameFiles" external.linked.project.path="$MODULE_DIR$/../../../renameFiles" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="ksaito" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../renameFiles">
+      <excludeFolder url="file://$MODULE_DIR$/../../../renameFiles/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../renameFiles/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
