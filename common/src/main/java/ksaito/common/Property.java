@@ -18,8 +18,8 @@ public class Property {
         prop = new Properties();
 
         try {
-            if (exists(get(this.getClass().getResource("./application.properties").toURI()))) {
-                prop.load(this.getClass().getResourceAsStream("./application.properties"));
+            if (exists(get(Property.class.getResource("/application.properties").toURI()))) {
+                prop.load(Property.class.getResourceAsStream("/application.properties"));
             }
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();

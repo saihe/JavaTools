@@ -9,6 +9,10 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 mainClassName = 'ksaito.renameFiles.Application'
 
+dependencies {
+    compile project(':common')
+}
+
 jar {
     applicationDefaultJvmArgs = [
             '-Dfile.encoding=UTF-8'
