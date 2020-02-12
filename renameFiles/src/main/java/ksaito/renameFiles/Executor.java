@@ -25,8 +25,7 @@ class Executor {
       AtomicInteger pngCounter = new AtomicInteger(0);
 
       if (Files.isDirectory(target)) {
-        System.out.println("内部ファイル取得");
-        System.out.println("取得ファイル数：" + Files.list(target).count());
+        System.out.println("取得ファイル数：" + Files.walk(target).count());
         Optional.ofNullable(Files.walk(target, 2))
           .ifPresent(pathStream ->
             pathStream

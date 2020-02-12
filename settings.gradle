@@ -2,4 +2,5 @@ rootProject.name = 'JavaTools'
 include 'lineSeparator'
 include 'characterCounter'
 include 'renameFiles'
+include 'common'
 
